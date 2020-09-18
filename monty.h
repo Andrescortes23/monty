@@ -48,7 +48,7 @@ typedef struct instruction_s
 char **tokenize(char *s);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-void freestack(stack_t **stack);
+void freestack(stack_t *stack);
 void error(unsigned int line_number);
 void wrongnum(char *num, unsigned int lin_num, stack_t **stack, stack_t *new);
 void match(char *token, stack_t **stack, unsigned int line_number);
