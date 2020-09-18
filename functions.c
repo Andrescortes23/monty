@@ -30,7 +30,7 @@ void match(char *token, stack_t **stack, unsigned int line_number)
 		count++;
 	}
 	freestack(*stack);
-	fprintf(stderr, "L%d: unknow instruction %s\n", line_number, token);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
 	exit(EXIT_FAILURE);
 }
 

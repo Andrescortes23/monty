@@ -34,3 +34,16 @@ void nop(stack_t **stack, unsigned int line_number)
 	(void) stack;
 	(void) line_number;
 }
+
+/**
+ *sub - to sub
+ *@stack: stack
+ *@line_number: file lines number
+ */
+void sub(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+
+	if (tmp->next == NULL)
+	{
+		fprintf(stderr, "L%d: can

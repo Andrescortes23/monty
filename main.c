@@ -39,6 +39,7 @@ int main(int argc, char **argv)
 	{
 		token = tokenize(buffer); /*Tokeniza para separar el comando del numero*/
 		if (token[0] == NULL)
+			line_number++;
 			continue;
 		numbers = token[1]; /*Convierte en int, quizas toca hacerlo dsps*/
 		match(token[0], stack, line_number);
