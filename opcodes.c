@@ -64,3 +64,25 @@ void pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
 		tmp = tmp->next;
 	}
 }
+
+/**
+ *pint - print value at the top of stack
+ *@stack: the stack
+ *@line_number: file line number
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->prev == NULL)
+		fprintf(stdout, "%d\n", (*stack)->n);
+	else
+	{
+		while ((*stack)->prev)
+			(*stack) = (*stack)->prev;
+		fprintf(stdout, "%d\n", (*stack)->n);
+	}
+}

@@ -12,10 +12,11 @@ void match(char *token, stack_t **stack, unsigned int line_number)
 	instruction_t codes[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{"NULL", NULL}
 	};
 
-	while (count < 3)
+	while (count < 4)
 	{
 		if (strcmp(codes[count].opcode, token) == 0)
 		{
