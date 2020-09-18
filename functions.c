@@ -24,9 +24,8 @@ void match(char *token, stack_t **stack, unsigned int line_number)
 		}
 		count++;
 	}
+	freestack(stack);
 	fprintf(stderr, "L%d: unknow instruction %s\n", line_number, token);
-	if (*stack != NULL)
-		freestack(stack);
 	exit(EXIT_FAILURE);
 }
 
