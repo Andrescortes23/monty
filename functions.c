@@ -14,10 +14,11 @@ void match(char *token, stack_t **stack, unsigned int line_number)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
 		{"NULL", NULL}
 	};
 
-	while (count < 4)
+	while (count < 6)
 	{
 		if (strcmp(codes[count].opcode, token) == 0)
 		{
