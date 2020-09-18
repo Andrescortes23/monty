@@ -11,7 +11,7 @@
 #include <ctype.h>
 
 extern char *numbers;
-char *numbers:
+char *numbers;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
