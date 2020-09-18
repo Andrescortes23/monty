@@ -10,7 +10,7 @@ char **tokenize(char *s)
 	char **buf = NULL;
 	char *token = NULL;
 
-	buf = malloc(sizeof(char *) * 2);
+	buf = malloc(sizeof(char *) * 3);
 	if (buf == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");

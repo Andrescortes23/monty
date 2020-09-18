@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 		match(token[0], stack, line_number);
 		line_number++;
 	}
-	freestack(stack);
+	freestack(*stack);
 	free(buffer);
 	fclose(fd);
 	return (0);

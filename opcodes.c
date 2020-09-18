@@ -14,7 +14,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
-		freestack(stack);
+		freestack(*stack);
 		exit(EXIT_FAILURE);
 	}
 
@@ -25,7 +25,7 @@ void push(stack_t **stack, unsigned int line_number)
 		if (isdigit(numbers[it]) == 0)
 		{
 			error(line_number);
-			freestack(stack);
+			freestack(*stack);
 			free(new);
 			exit(EXIT_FAILURE);
 		}

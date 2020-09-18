@@ -24,7 +24,7 @@ void match(char *token, stack_t **stack, unsigned int line_number)
 		}
 		count++;
 	}
-	freestack(stack);
+	freestack(*stack);
 	fprintf(stderr, "L%d: unknow instruction %s\n", line_number, token);
 	exit(EXIT_FAILURE);
 }
@@ -33,17 +33,18 @@ void match(char *token, stack_t **stack, unsigned int line_number)
  *freestack - free the stack
  *@stack: stack to free
  */
-void freestack(stack_t **stack)
+void freestack(stack_t *stack)
 {
 	stack_t *tmp;
 
-	while (*stack != NULL)
+	tmp = stack;
+
+	while (stack != NULL)
 	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
+		tmp = tmp->next;
+		free(stack);
+		stack = tmp;
 	}
-	free(stack);
 }
 
 /**
@@ -67,7 +68,7 @@ void wrongnum(char *num, unsigned int lin_num, stack_t **stack, stack_t *new)
 	if (num == NULL || isspace(num[0]) != 0)
 	{
 		error(lin_num);
-		freestack(stack);
+		freestack(*stack);
 		free(new);
 		exit(EXIT_FAILURE);
 	}
