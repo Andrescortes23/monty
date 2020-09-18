@@ -52,5 +52,7 @@ void freestack(stack_t *stack);
 void error(unsigned int line_number);
 void wrongnum(char *num, unsigned int lin_num, stack_t **stack, stack_t *new);
 void match(char *token, stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+
 
 #endif
